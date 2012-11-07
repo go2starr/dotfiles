@@ -11,6 +11,8 @@ fi
 # Tmux
 if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
     tmux attach || tmux new; exit
+else
+    export TERM="xterm-256color"
 fi
 
 ################################################################################
