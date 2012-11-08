@@ -8,6 +8,11 @@ if [ -f ~/.fbrc ]; then
     . ~/.fbrc
 fi
 
+# Emacs daemon
+export ALTERNATE_EDITOR=""
+alias emacs='emacsclient -t'
+alias e=emacs
+
 # Tmux
 if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
     tmux attach || tmux new; exit
