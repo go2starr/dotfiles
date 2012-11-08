@@ -12,6 +12,7 @@ fi
 export ALTERNATE_EDITOR=""
 alias emacs='emacsclient -t'
 alias e=emacs
+alias remacs="killall -9 emacs; emacsclient -t"
 
 # Tmux
 if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ] && [ $TERM != "xterm-256color" ]; then
