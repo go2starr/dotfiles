@@ -2,6 +2,19 @@
 (add-to-list 'load-path "~/.emacs.d/")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Color theming
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Load color-theme
+(add-to-list 'load-path "~/.emacs.d/elpa/color-theme")
+(require 'color-theme)
+
+;; Enable tomorrow-theme
+(add-to-list 'load-path "~/.emacs.d/tomorrow-theme")
+(require 'color-theme-tomorrow)
+(color-theme-tomorrow-night-bright)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; FB master emacs
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defvar master-dir (getenv "ADMIN_SCRIPTS"))
