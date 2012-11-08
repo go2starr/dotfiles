@@ -14,7 +14,7 @@ alias emacs='emacsclient -t'
 alias e=emacs
 
 # Tmux
-if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
+if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ] && [ $TERM != "xterm-256color" ]; then
     tmux attach || tmux new; exit
 else
     export TERM="xterm-256color"
