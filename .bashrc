@@ -1,3 +1,8 @@
+# Attach to tmux first so bashrc isn't run twice
+if [ -s $TMUX ]; then
+    tmux attach || tmux new; exit
+fi
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
@@ -14,13 +19,5 @@ alias emacs='emacsclient -t'
 alias e=emacs
 alias remacs="killall -9 emacs; emacsclient -t"
 
-# Tmux
-if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ] && [ $TERM != "xterm-256color" ]; then
-    tmux attach || tmux new; exit
-else
-    export TERM="xterm-256color"
-fi
-
-################################################################################
-# DO NOT ADD BELOW THIS LINE
-################################################################################
+# Use colors
+export TERM="xterm-256color"
