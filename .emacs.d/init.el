@@ -28,8 +28,8 @@
 (load-library (concat master-dir "/master.emacs"))
 
 ;; Tags
-(let (large-file-warning-threshold 'nil) (visit-tags-table "~/www/TAGS")) ; Really large file
-(visit-tags-table "~/www/TAGS")
+(let (large-file-warning-threshold 'nil) (visit-tags-table "/home/engshare/pfff/TAGS")) ; Really large file
+(visit-tags-table "/home/engshare/pfff/TAGS")
 
 ;; Autocomplete
 (load "/home/engshare/tools/pfff_php")
