@@ -21,3 +21,14 @@ alias remacs="killall -9 emacs; emacsclient -t"
 
 # Use colors
 export TERM="xterm-256color"
+
+# Grepping
+alias grep="grep --color"
+function grep_recursive {
+    grep -r $@
+}
+function grep_recursive_here {
+    grep -r $@ .
+}
+alias grh=grep_recursive_here
+alias gr=grep_recursive
