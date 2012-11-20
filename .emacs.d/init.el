@@ -28,8 +28,8 @@
 (load-library (concat master-dir "/master.emacs"))
 
 ;; Tags
-(let (large-file-warning-threshold 'nil) (visit-tags-table "~/www/TAGS")) ; Really large file
-(visit-tags-table "~/www/TAGS")
+(let (large-file-warning-threshold 'nil) ; Really large file(visit-tags-table "~/www/TAGS")
+(visit-tags-table "~/www/TAGS"))
 
 ;; Autocomplete
 (load "/home/engshare/tools/pfff_php")
@@ -57,3 +57,13 @@
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete/ac-dict")
 (ac-config-default)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Hack
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq compile-command "/mnt/vol/engshare/tools/hh_client")
+(global-set-key (kbd "M-RET") 'compile)
+(define-key input-decode-map "\e\eOA" [(meta up)])
+(define-key input-decode-map "\e\eOB" [(meta down)])
+(global-set-key [(meta up)] 'next-error)
+(global-set-key [(meta down)] 'previous-error)
