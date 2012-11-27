@@ -1,5 +1,6 @@
 # Attach to tmux first so bashrc isn't run twice
-if [ -s $TMUX ]; then
+
+if [ "$(type tmux 2>/dev/null)" -a -s $TMUX ]; then
     tmux attach || tmux new; exit
 fi
 
@@ -13,7 +14,10 @@ if [ -f ~/.fbrc ]; then
     . ~/.fbrc
 fi
 
-# Emacs daemon
+# Emacs
+if [ -e /Applications/Emacs.app/Contents/MacOS/bin/emacsclient ]; then
+    alias emacsclient=/Applications/Emacs.app/Contents/MacOS/bin/emacsclient
+fi
 export ALTERNATE_EDITOR=""
 alias emacs='emacsclient -t'
 alias e=emacs
