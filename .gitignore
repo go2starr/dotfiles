@@ -2,4 +2,5 @@
 .ssh
 .irssi
 
-*/archive-contents
+archive-contents
+ac-comphist.dat
