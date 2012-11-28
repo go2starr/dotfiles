@@ -15,10 +15,11 @@ if [ -f ~/.fbrc ]; then
 fi
 
 # Emacs
-if [ -e /Applications/Emacs.app/Contents/MacOS/bin/emacsclient ]; then
-    alias emacsclient=/Applications/Emacs.app/Contents/MacOS/bin/emacsclient
-fi
 export ALTERNATE_EDITOR=""
+if [ -e /Applications/Emacs.app/Contents/MacOS/bin/emacsclient ]; then
+    export PATH=/Applications/Emacs.app/Contents/MacOS:$PATH
+    export PATH=/Applications/Emacs.app/Contents/MacOS/bin:$PATH
+fi
 alias emacs='emacsclient -t'
 alias e=emacs
 alias remacs="killall -9 emacs; emacsclient -t"

@@ -1,6 +1,10 @@
+*~
+
 .fbrc
 .ssh
 .irssi
 
 archive-contents
 ac-comphist.dat
+
+auto-save-list/
