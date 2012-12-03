@@ -1,7 +1,7 @@
 # Attach to tmux first so bashrc isn't run twice
 
 if [ "$(type tmux 2>/dev/null)" -a -s $TMUX ]; then
-    tmux attach || tmux new; exit
+    tmux attach || tmux new;
 fi
 
 # Source global definitions
@@ -15,14 +15,13 @@ if [ -f ~/.fbrc ]; then
 fi
 
 # Emacs
+emacsclient --version | grep 24 >/dev/null ||
+echo Upgrade emacs you hobo! Or dont, maybe it will work.
+
 export ALTERNATE_EDITOR=""
-if [ -e /Applications/Emacs.app/Contents/MacOS/bin/emacsclient ]; then
-    export PATH=/Applications/Emacs.app/Contents/MacOS:$PATH
-    export PATH=/Applications/Emacs.app/Contents/MacOS/bin:$PATH
-fi
 alias emacs='emacsclient -t'
 alias e=emacs
-alias remacs="killall -9 emacs; emacsclient -t"
+alias remacs="killall -9 emacs;"
 
 # Use colors
 export TERM="xterm-256color"
