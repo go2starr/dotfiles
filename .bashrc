@@ -1,5 +1,4 @@
 # Attach to tmux first so bashrc isn't run twice
-
 if [ "$(type tmux 2>/dev/null)" -a -s $TMUX ]; then
     tmux attach || tmux new;
 fi
@@ -13,6 +12,9 @@ fi
 if [ -f ~/.fbrc ]; then
     . ~/.fbrc
 fi
+
+# Bash
+unset HISTSIZE
 
 # Emacs
 emacsclient --version | grep 24 >/dev/null ||
