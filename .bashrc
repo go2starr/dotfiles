@@ -14,7 +14,8 @@ if [ -f ~/.fbrc ]; then
 fi
 
 # Bash
-unset HISTSIZE
+export HISTSIZE=
+export HISTFILESIZE=
 
 # Emacs
 emacsclient --version | grep 24 >/dev/null ||
