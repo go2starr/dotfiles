@@ -67,3 +67,43 @@
 (define-key input-decode-map "\e\eOB" [(meta down)])
 (global-set-key [(meta up)] 'next-error)
 (global-set-key [(meta down)] 'previous-error)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Eclim
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Init
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/emacs-eclim/"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/emacs-eclim/vendor"))
+(require 'eclim)
+
+(setq eclim-auto-save t)
+(global-eclim-mode)
+
+(require 'eclimd)
+
+;; Set install dir
+(custom-set-variables
+ '(eclim-eclipse-dirs '("/opt/eclipse")))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Compile errors
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq help-at-pt-display-when-idle t)
+(setq help-at-pt-timer-delay 0.1)
+(help-at-pt-set-timer)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; AC
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; regular auto-complete initialization
+(require 'auto-complete-config)
+(ac-config-default)
+
+;; add the emacs-eclim source
+(require 'ac-emacs-eclim-source)
+(add-hook 'eclim-mode-hook (lambda ()
+                             (add-to-list 'ac-sources 'ac-source-emacs-eclim)
+                             (add-to-list 'ac-sources 'ac-source-emacs-eclim-c-dot)))
