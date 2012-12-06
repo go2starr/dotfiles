@@ -28,8 +28,8 @@
 (load-library (concat master-dir "/master.emacs"))
 
 ;; Tags
-(let (large-file-warning-threshold 'nil) ; Really large file(visit-tags-table "~/www/TAGS")
-(visit-tags-table "~/www/TAGS"))
+;; (let (large-file-warning-threshold 'nil) ; Really large file(visit-tags-table "~/www/TAGS")
+;; (visit-tags-table "~/www/TAGS"))
 
 ;; Autocomplete
 (load "/home/engshare/tools/pfff_php")
@@ -87,6 +87,8 @@
 ;; Set install dir
 (custom-set-variables
  '(eclim-eclipse-dirs '("/opt/eclipse")))
+(custom-set-variables
+ '(eclim-executable "/opt/eclipse/eclim"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Compile errors
@@ -107,3 +109,35 @@
 (add-hook 'eclim-mode-hook (lambda ()
                              (add-to-list 'ac-sources 'ac-source-emacs-eclim)
                              (add-to-list 'ac-sources 'ac-source-emacs-eclim-c-dot)))
+
+;; company mode
+(require 'company)
+(require 'company-emacs-eclim)
+(company-emacs-eclim-setup)
+(global-company-mode t)
+
+;; Use company completions instead
+(defun eclim-company-tab ()
+  (interactive)
+  (setq p (point))
+  (indent-according-to-mode)
+  (and
+   (eq p (point))
+   (company-complete))
+  )
+
+;; M-Tab to indent/complete
+(define-key eclim-mode-map (kbd "M-TAB") 'eclim-company-tab)
+
+;; Try to override default tab behavior
+(add-hook 'java-mode-hook (lambda ()
+                            (define-key java-mode-map (kbd "TAB") 'eclim-company-tab)))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; elisp
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Eval buffer
+(global-set-key (kbd "C-M-z") 'eval-buffer)
+
