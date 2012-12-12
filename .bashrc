@@ -14,8 +14,8 @@ if [ -f ~/.fbrc ]; then
 fi
 
 # Bash
-export HISTSIZE=
-export HISTFILESIZE=
+export HISTSIZE=999999999
+export HISTFILESIZE=9999999999
 
 # Emacs
 emacsclient --version | grep 24 >/dev/null ||
@@ -39,3 +39,21 @@ function grep_recursive_here {
 }
 alias grh=grep_recursive_here
 alias gr=grep_recursive
+
+# Finding
+function find_grep {
+    find . | grep $@
+}
+alias gf=find_grep
+
+# Processes
+function ps_grep {
+    ps -e | grep $@
+}
+alias gp=ps_grep
+
+# History
+function history_grep {
+    history | grep $@
+}
+alias gh=history_grep
