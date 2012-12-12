@@ -126,13 +126,19 @@
    (company-complete))
   )
 
-;; M-Tab to indent/complete
-(define-key eclim-mode-map (kbd "M-TAB") 'eclim-company-tab)
-
 ;; Try to override default tab behavior
-(add-hook 'java-mode-hook (lambda ()
-                            (define-key java-mode-map (kbd "TAB") 'eclim-company-tab)))
+;; (add-hook 'java-mode-hook (lambda ()
+;;                             (define-key java-mode-map (kbd "TAB") 'eclim-company-tab)))
 
+;; Declaration search
+(add-hook 'java-mode-hook (lambda ()
+                            (define-key java-mode-map (kbd "M-.") 'eclim-java-find-declaration)))
+
+;; (require 'ac-company)
+;; (ac-company-define-source ac-source-company-eclim company-emacs-eclim)
+;; (add-hook 'java-mode-hook
+;;           (lambda ()
+;;             (add-to-list 'ac-source-e
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; elisp
