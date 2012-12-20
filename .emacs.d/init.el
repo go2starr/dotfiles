@@ -147,3 +147,12 @@
 ;; Eval buffer
 (global-set-key (kbd "C-M-z") 'eval-buffer)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; windows and frames
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun delete-other-windows-and-split-window-horizontally ()
+  (interactive)
+  (delete-other-windows)
+  (split-window-horizontally))
+
+(global-set-key (kbd "C-x p") 'delete-other-windows-and-split-window-horizontally)
