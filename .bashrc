@@ -57,3 +57,9 @@ function history_grep {
     history | grep $@
 }
 alias gh=history_grep
+
+# Combos
+function emacs_find_grep {
+    emacs $(gf $@)
+}
+alias egf=emacs_find_grep
