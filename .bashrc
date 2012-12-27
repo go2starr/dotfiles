@@ -42,7 +42,7 @@ alias gr=grep_recursive
 
 # Finding
 function find_grep {
-    find . | grep $@
+    find . | grep -v \.git | grep $@
 }
 alias gf=find_grep
 
