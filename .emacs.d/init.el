@@ -19,7 +19,7 @@
 ;; Enable tomorrow-theme
 (add-to-list 'load-path "~/.emacs.d/tomorrow-theme")
 (require 'color-theme-tomorrow)
-(color-theme-tomorrow-night-bright)
+(color-theme-tomorrow-night)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; FB
