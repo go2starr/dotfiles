@@ -8,8 +8,11 @@
 ;; Show column number
 (column-number-mode)
 
-;; Auto-indent
+;; Auto-indent on RETURN
 (global-set-key (kbd "RET") 'newline-and-indent)
+
+;; Pair ()'s, {}'s, etc.
+(electric-pair-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Color theming
