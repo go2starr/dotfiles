@@ -1,5 +1,6 @@
  ! General
  !urxvt*termName:  rxvt-256color
+ urxvt*meta8:		   true		   
  urxvt*loginShell:         true
  urxvt*scrollBar:         false
  urxvt*secondaryScroll:    true
