@@ -21,10 +21,12 @@ export HISTFILESIZE=9999999999
 emacsclient --version | grep 24 >/dev/null ||
 echo Upgrade emacs you hobo! Or dont, maybe it will work.
 
-export ALTERNATE_EDITOR=""
 alias emacs='emacsclient -t'
 alias e=emacs
 alias remacs="killall -9 emacs;"
+
+export EDITOR=emacs
+export ALTERNATE_EDITOR=""
 
 # Use colors
 export TERM="xterm-256color"
