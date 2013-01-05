@@ -8,7 +8,7 @@
 ;; Show column number
 (column-number-mode)
 
-;; Auto-indent on RETURN
+;; Indent on return
 (global-set-key (kbd "RET") 'newline-and-indent)
 
 ;; Pair ()'s, {}'s, etc.
@@ -28,17 +28,10 @@
 (color-theme-tomorrow-night)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; FB
+;; FB - private definitions
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defvar master-dir (getenv "ADMIN_SCRIPTS"))
-(load-library (concat master-dir "/master.emacs"))
-
-;; Tags
-;; (let (large-file-warning-threshold 'nil) ; Really large file(visit-tags-table "~/www/TAGS")
-;; (visit-tags-table "~/www/TAGS"))
-
-;; Autocomplete
-(load "/home/engshare/tools/pfff_php")
+(if (file-exists-p "~/.emacs.d/fb.el")
+    (require 'fb))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Package manager
