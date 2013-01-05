@@ -32,7 +32,9 @@ export ALTERNATE_EDITOR=""
 export TERM="xterm-256color"
 
 # Grepping
-alias grep="grep --color"
+alias grep="grep --color=auto"
+alias grepc="grep --color=always"
+alias less="less -R"
 function grep_recursive {
     grep -r $@
 }
