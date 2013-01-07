@@ -1,7 +1,8 @@
 # Attach to tmux first so bashrc isn't run twice
-if [ "$(type tmux 2>/dev/null)" -a -s $TMUX ]; then
-    tmux attach || tmux new;
-fi
+#if [ "$(type tmux 2>/dev/null)" -a -s $TMUX ]; then
+#    tmux attach || tmux new;
+#fi
+alias ta="tmux attach || tmux new"
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
