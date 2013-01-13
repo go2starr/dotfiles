@@ -2,7 +2,15 @@
 # Bash
 ################################################################################
 # Path
-export PATH=$PATH:$HOME/bin
+[ -e /usr/local/bin ] && export PATH=/usr/local/bin/:$PATH
+if [ -e $HOME/bin/ ]
+then
+    for dir in $(find $HOME/bin -type d )
+    do
+        export PATH=$dir:$PATH
+    done
+fi
+
 export EDITOR=emacs
 
 # History
