@@ -75,8 +75,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Init
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/emacs-eclim/"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/emacs-eclim/vendor"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/submodules/emacs-eclim/"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/submodules/emacs-eclim/vendor"))
 (require 'eclim)
 
 (setq eclim-auto-save t)

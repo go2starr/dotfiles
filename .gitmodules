@@ -4,3 +4,7 @@
 [submodule ".emacs.d/submodules/python-mode"]
 	path = .emacs.d/submodules/python-mode
 	url = git://github.com/emacsmirror/python-mode.git
+[submodule ".emacs.d/submodules/emacs-eclim"]
+	path = .emacs.d/submodules/emacs-eclim
+	url = git@github.com:go2starr/emacs-eclim.git
+
